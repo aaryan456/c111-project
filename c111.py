@@ -36,14 +36,14 @@ thirdstddevStart, thirdstddevEnd = mean - (3*stddev), mean + (3*stddev)
 df = pd.read_csv("mediumdata.csv")
 data = df["id"].to_list()
 
-meanOfSample = statistics.mean(data)
+meanofsample = statistics.mean(data)
 print("Mean of Sampling Distribution", meanOfSample)
 
 fig = pf.create_distplot([meanlist],["Population Mean"], show_hist = False)
 fig.add_trace(go.Scatter(x=[mean, mean], y=[0,0.17],mode = "lines",name = "Mean"))
-fig.add_trace(go.Scatter(x=[meanOfSample, meanOfSample], y=[0,0.17],mode = "lines",name = "Mean of Sample"))
+fig.add_trace(go.Scatter(x=[meanofsample, meanofsample], y=[0,0.17],mode = "lines",name = "Mean of Sample"))
 fig.add_trace(go.Scatter(x=[firststddevEnd,firststddevEnd], y=[0,0.17],mode = "lines",name = "Standard Deviation 1 end"))
 fig.show()
 
-zscore = (meanOfSample - mean)/stddev
-print("Z-Score is: ", zscore)
+zscore = (meanofsample - mean)/stddev
+print("z score is: ", zscore)
