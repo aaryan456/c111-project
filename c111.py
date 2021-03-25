@@ -13,7 +13,7 @@ print("Standard Deviation of the data is {}".format(datastddev))
 
 print("mean of population- ",statistics.mean(data))
 def random_set_of_mean(counter):
-    dataSet = []
+    dataset = []
     for i in range(0,counter):
         randomIndex = random.randint(0,len(data)-1)
         value = data[randomIndex]
