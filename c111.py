@@ -18,7 +18,7 @@ def random_set_of_mean(counter):
         randomIndex = random.randint(0,len(data)-1)
         value = data[randomIndex]
         dataset.append(value)
-    mean = statistics.mean(dataSet)
+    mean = statistics.mean(dataset)
     return mean
 
 meanlist = []
@@ -37,7 +37,7 @@ df = pd.read_csv("mediumdata.csv")
 data = df["id"].to_list()
 
 meanofsample = statistics.mean(data)
-print("Mean of Sampling Distribution", meanOfSample)
+print("Mean of Sampling Distribution", meanofsample)
 
 fig = pf.create_distplot([meanlist],["Population Mean"], show_hist = False)
 fig.add_trace(go.Scatter(x=[mean, mean], y=[0,0.17],mode = "lines",name = "Mean"))
